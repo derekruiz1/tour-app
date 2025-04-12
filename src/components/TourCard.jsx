@@ -6,7 +6,8 @@ const TourCard = ({id, name, info, price, image}) => {
     const [readMore, setReadMore] = useState(false);
 
     return (
-        <article className="tour-card">
+        <article className="tour-card"> 
+            <img src={image} alt={name}/>
             <h3>{name}</h3>
             <h5>{price}</h5>
 
