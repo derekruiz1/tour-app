@@ -37,14 +37,14 @@ useEffect(() => {
     fetchTours();
 }, []);
 
-//Render the loading state
+//Render the loading state 
 if (loading) {
     return <h2>Loading...</h2>;
 };
-//Render the error state
+//Render the error state 
 if (error) {
     return (
-            <h2>Something went wrong...</h2>
+            <h2>Something went wrong, try again...</h2>
     );
 }
 
