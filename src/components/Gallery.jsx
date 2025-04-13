@@ -11,23 +11,25 @@ const Gallery = ({tours, setTours, onRemove}) => {
     //Function to fetch tours from the API
     const fetchTours = async () => {
         try {
-        const response = await fetch("https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project");
-        //Map the API to only the field we need
+            const response = await fetch("https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project");
+            const data = await response.json(); // Parse the JSON response
 
-        const trimmed = data.results.map((tour) => ({
-           id: tour.id,
-           name: tour.name,
-           info: tour.info,
-           price: tour.price,
-           image: tour.image,
-        }));
-        setTours(trimmed);
-        setLoading(false);
-} catch (error) {
-        setError(true);
-        setLoading(false);
+            // Map the API response to only the fields we need
+            const trimmed = data.map((tour) => ({
+                id: tour.id,
+                name: tour.name,
+                info: tour.info,
+                price: tour.price,
+                image: tour.image,
+            }));
+
+            setTours(trimmed);
+            setLoading(false);
+        } catch (error) {
+            setError(true);
+            setLoading(false);
         }
-}
+    };
         
 
 //run the fetchTours function when the component mounts

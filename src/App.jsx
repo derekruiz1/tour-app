@@ -8,7 +8,7 @@ function App () {
   const [tours, setTours] = useState([]);
 
   //Function to remove a tour from the list
-  const removeTour = (id) => {
+  const onRemove = (id) => {
     setTours(tours.filter((tour) => tour.id !== id));
   };
 
@@ -16,7 +16,7 @@ function App () {
     <main>
       <h1>Tour List</h1>
       {/* Pass state and handlers down to the Gallery Component */}
-      <Gallery tours={tours} setTours={setTours} removeTour={removeTour}/>
+      <Gallery tours={tours} setTours={setTours} onRemove={onRemove}/>
      
     </main>
   )
