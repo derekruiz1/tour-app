@@ -11,7 +11,7 @@ const Gallery = ({tours, setTours, onRemove}) => {
     //Function to fetch tours from the API
     const fetchTours = async () => {
         try {
-        const response = await fetch("https://course-api.com/react-tours-project");
+        const response = await fetch("https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project");
         //Map the API to only the field we need
 
         const trimmed = data.results.map((tour) => ({
