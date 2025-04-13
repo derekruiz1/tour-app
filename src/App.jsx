@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import TourCard from "./components/TourCard";
 import Gallery from "./components/Gallery";
+import "./styles/styles.css";
 
 //Root component of the app
 function App () {
